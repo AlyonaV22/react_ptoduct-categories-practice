@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import './App.scss';
 
 import usersFromServer from './api/users';
@@ -40,18 +41,18 @@ export const App = () => {
     setQuery('');
   };
 
-  const resetFilters = () => {
+  const reset = () => {
     setSelectedUser(null);
     setQuery('');
   };
 
   const filteredProducts = products.filter(product => {
-    const matchesUser = selectedUser ? product.user.id === selectedUser : true;
-    const matchesSearch = product.name
+    const productUser = selectedUser ? product.user.id === selectedUser : true;
+    const productSearch = product.name
       .toLowerCase()
       .includes(query.toLowerCase());
 
-    return matchesUser && matchesSearch;
+    return productUser && productSearch;
   });
 
   return (
@@ -108,7 +109,7 @@ export const App = () => {
                 href="#/"
                 data-cy="ResetAllButton"
                 className="button is-link is-outlined is-fullwidth"
-                onClick={resetFilters}
+                onClick={reset}
               >
                 Reset all filters
               </a>
