@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import './App.scss';
 
 import usersFromServer from './api/users';
