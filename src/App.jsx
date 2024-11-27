@@ -67,7 +67,7 @@ export const App = () => {
               {usersFromServer.map(user => (
                 <a
                   key={user.id}
-                  data-cy="FilterAllUsers"
+                  data-cy="FilterUser"
                   href="#/"
                   className={selectedUser === user.id ? 'is-active' : ''}
                   onClick={() => userClick(user.id)}

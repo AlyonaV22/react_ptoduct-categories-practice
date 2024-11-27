@@ -17,15 +17,7 @@ Implement as many options below as you can:
    - The `x` button should appear only when the value is not empty;
    - Clear the value after the `x` button click.
 1. Show a `No results` message if there are no products matching the current criteria
-   - `Reset All Filters` button should clear all the filters.
-1. (\*) Allow to select several categories:
-   - Add `is-info` class to selected categories;
-   - Show only products of selected categories;
-   - `All` button should clear the selection;
-   - Remove the `is-outlined` class from the `All` button if no categories are selected.
-1. (\*) Add the ability to sort products by all the columns:
-   - a column should have a title with the `fa-sort` icon by default;
-   - the first click sorts products by the given column ascending and use the `fa-sort-up` icon;
+npm
    - the second click sorts products in descending order and uses the `fa-sort-down` icon;
    - the third click disables sorting;
    - products are sorted by 1 column at a time (reset the column title when clicking on the other one)
