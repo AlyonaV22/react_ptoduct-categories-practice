@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import cn from 'classnames';
 import './App.scss';
 
 import usersFromServer from './api/users';
@@ -23,6 +24,7 @@ const products = productsFromServer.map(product => {
 export const App = () => {
   const [selectedUser, setSelectedUser] = useState(null);
   const [query, setQuery] = useState('');
+  const [selectedOwnerId, setSelectedOwnerId] = useState(null);
 
   const userClick = userId => {
     if (userId === selectedUser) {
@@ -62,6 +64,14 @@ export const App = () => {
         <div className="block">
           <nav className="panel">
             <p className="panel-heading">Filters</p>
+            <a
+              data-cy="FilterAllUsers"
+              href="#/"
+              onClick={() => setSelectedOwnerId(null)}
+              className={cn({ 'is-active': selectedOwnerId === null })}
+            >
+              All
+            </a>
 
             <p className="panel-tabs has-text-weight-bold">
               {usersFromServer.map(user => (
